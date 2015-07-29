@@ -1,11 +1,23 @@
 {
-  "name": "Look up At Multi Function Chinese Character Database",
-  "description": "Look up At Multi Function Chinese Character Database",
-  "version": "0.1",
-//  "permissions": ["contextMenus","browsingData","clipboardRead","clipboardWrite"],
-  "permissions": ["contextMenus"],  
-  "background": {
-    "scripts": ["LookUp.js"]
-  },
-  "manifest_version": 2
+    "name": "Look up At Multi Function Chinese Character Database",
+    "description": "Look up At Multi Function Chinese Character Database",
+    "version": "0.1",
+    //  "permissions": ["contextMenus","browsingData","clipboardRead","clipboardWrite"],
+    "permissions": ["contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["LookUp.js"],
+        "all_frames": true
+    }],
+
+
+    "background": {
+        "scripts": ["LookUp.js"]
+    },
+    "manifest_version": 2
 }
