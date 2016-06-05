@@ -1,11 +1,21 @@
 {
-  "name": "Look up At Multi Function Chinese Character Database",
-  "description": "Look up At Multi Function Chinese Character Database",
+  "manifest_version": 2,
+
+  "name": "喺《漢語多功能字庫》查字 Look up At Multi Function Chinese Character Database",
+  "description": "喺《漢語多功能字庫》查字 Look up At Multi Function Chinese Character Database",
   "version": "0.1",
-//  "permissions": ["contextMenus","browsingData","clipboardRead","clipboardWrite"],
-  "permissions": ["contextMenus"],  
+
+  "browser_action": {
+    "default_icon": "favicon-96x96.png",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
   "background": {
     "scripts": ["LookUp.js"]
-  },
-  "manifest_version": 2
+  }
 }
